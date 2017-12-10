@@ -5,20 +5,9 @@
 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 		version="3.1">
 
+	<!-- full tail servlet configuration -->
 	<servlet>
-		<servlet-name>journal</servlet-name><servlet-class>flodila.tailfile.TailFileServlet</servlet-class>
-		<init-param>
-			<param-name>path</param-name><param-value>/var/log/syslog</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>journal</servlet-name><url-pattern>/journal</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>somelog</servlet-name>
-		<servlet-class>flodila.tailfile.TailFileServlet</servlet-class>
+		<servlet-name>somelog</servlet-name><servlet-class>flodila.tailfile.TailFileServlet</servlet-class>
 		<init-param><param-name>path</param-name><param-value>/home/florian/some.log</param-value></init-param>
 		<init-param><param-name>charset</param-name><param-value>utf-8</param-value></init-param>
 		<init-param><param-name>maxMemMapKiB</param-name><param-value>2048</param-value></init-param>
@@ -26,19 +15,14 @@
 		<init-param><param-name>minTimeGapMillis</param-name><param-value>50</param-value></init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	<servlet-mapping>
-		<servlet-name>somelog</servlet-name><url-pattern>/somelog</url-pattern>
-	</servlet-mapping>
+	<servlet-mapping><servlet-name>somelog</servlet-name><url-pattern>/somelog</url-pattern></servlet-mapping>
 
+	<!-- minimal tail servlet configuration -->
 	<servlet>
 		<servlet-name>otherlog</servlet-name><servlet-class>flodila.tailfile.TailFileServlet</servlet-class>
-		<init-param>
-			<param-name>path</param-name><param-value>/home/florian/other.log</param-value>
-		</init-param>
+		<init-param><param-name>path</param-name><param-value>/home/florian/other.log</param-value></init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	<servlet-mapping>
-		<servlet-name>otherlog</servlet-name><url-pattern>/otherlog</url-pattern>
-	</servlet-mapping>
+	<servlet-mapping><servlet-name>otherlog</servlet-name><url-pattern>/otherlog</url-pattern></servlet-mapping>
 
 </web-app>
