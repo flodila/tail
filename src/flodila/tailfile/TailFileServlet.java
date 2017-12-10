@@ -30,6 +30,9 @@ import javax.websocket.Session;
 import javax.websocket.server.ServerContainer;
 import javax.websocket.server.ServerEndpointConfig;
 
+/**
+ * The web part of the tail -f servlet
+ */
 public final class TailFileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String servletName;

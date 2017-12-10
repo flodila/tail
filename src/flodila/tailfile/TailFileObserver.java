@@ -2,6 +2,9 @@ package flodila.tailfile;
 
 import java.util.List;
 
+/**
+ * What you need to implement in order to get the changes for the file you want to watch
+ */
 public interface TailFileObserver {
 
 	/**

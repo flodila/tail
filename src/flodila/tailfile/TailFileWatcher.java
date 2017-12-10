@@ -34,6 +34,9 @@ import java.util.concurrent.TimeUnit;
 
 import flodila.tailfile.TailFileObserver.FileState;
 
+/**
+ * The backend of the tail -f servlet; no servlet imports here - you might want to use this anywhere else as well
+ */
 public class TailFileWatcher {
 	public static final long DEFAULT_MAX_MEM_MAP_KILOBYTES = 1024; // 1 MiB
 	public static final int DEFAULT_MAX_LINES = 1024;
